@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleados</title>
+</head>
+
+<!--Crear la tabla en la base de dados
+    CREATE TABLE employees (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        identificacion VARCHAR(30),
+        name VARCHAR(50),
+        email VARCHAR(50),
+        phone VARCHAR(20),
+        position VARCHAR(200)
+    );
+-->
+
+<body>
+    <!--CRUD empleados (Create, Read, Update, Delete) crear, leer, modificar,eliminar-->
+    <img src="/img/cocinera_logo.png">
+    <h3>Nuevo empleado</h3>
+
+    <!--Formulario para crear un nuevo empleado-->
+    <form action="crud.php" method="post">
+        <label for="identificacion">Identificacion:</label>
+        <input type="number" id="identificacion" name="identificacion" required>
+        <br><br>
+
+        <label for="name">Nombre completo:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+       
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        
+        <label for="phone">Celular:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <br><br>
+        
+        <label for="position">Cargo a desempeñar</label>
+        <input type="text" id="position" name="position">
+        <br><br>
+
+        <button type="submit">Guardar Empleado</button>
+    </form>
+    
+
+</body>
+</html>
