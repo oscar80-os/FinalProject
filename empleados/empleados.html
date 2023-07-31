@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
     <title>Empleados</title>
 </head>
 
@@ -18,35 +19,81 @@
 -->
 
 <body>
-    <!--CRUD empleados (Create, Read, Update, Delete) crear, leer, modificar,eliminar-->
+  <!--CRUD empleados (Create, Read, Update, Delete) crear, leer, modificar,eliminar-->
+
+
+
+  <!-- Formulario para crear un nuevo empleado -->
+
+  <form method="post" action="empleados.php">
+    <br>
     <img src="/img/cocinera_logo.png">
-    <h3>Nuevo empleado</h3>
+    <br><br>
+    <h1>Nuevo empleado</h1>
+    <br><br>
+    <label for="identificacion">Identificación:</label>
+    <input type="text" id="identificacion" name="identificacion" required>
+    <br><br>
 
-    <!--Formulario para crear un nuevo empleado-->
-    <form action="crud.php" method="post">
-        <label for="identificacion">Identificacion:</label>
-        <input type="number" id="identificacion" name="identificacion" required>
-        <br><br>
+    <label for="name">Nombre completo:</label>
+    <input type="text" id="name" name="name" required>
+    <br><br>
 
-        <label for="name">Nombre completo:</label>
-        <input type="text" id="name" name="name" required>
-        <br><br>
-       
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
-        
-        <label for="phone">Celular:</label>
-        <input type="tel" id="phone" name="phone" required>
-        <br><br>
-        
-        <label for="position">Cargo a desempeñar</label>
-        <input type="text" id="position" name="position">
-        <br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
 
-        <button type="submit">Guardar Empleado</button>
-    </form>
-    
+    <label for="phone">Teléfono:</label>
+    <input type="tel" id="phone" name="phone" required>
+    <br><br>
+
+    <label for="position">Cargo:</label>
+    <input type="text" id="position" name="position" required>
+    <br><br>
+
+    <button type="submit" name="create_employee">Guardar Empleado</button>
+  </form>
+
+  <!-- Formulario para modificar un empleado -->
+  <br><br>
+  <form method="post" action="empleados.php">
+    <h1>Modificar empleado</h1>
+    <br><br>
+    <label for="identificacion_mod">Identificación del empleado a modificar:</label>
+    <input type="text" id="identificacion_mod" name="identificacion_mod" required>
+    <br><br>
+
+    <label for="name_mod">Nombre completo:</label>
+    <input type="text" id="name_mod" name="name_mod" required>
+    <br><br>
+
+    <label for="email_mod">Email:</label>
+    <input type="email" id="email_mod" name="email_mod" required>
+    <br><br>
+
+    <label for="phone_mod">Teléfono:</label>
+    <input type="tel" id="phone_mod" name="phone_mod" required>
+    <br><br>
+
+    <label for="position_mod">Cargo:</label>
+    <input type="text" id="position_mod" name="position_mod" required>
+    <br><br>
+
+    <button type="submit" name="update_employee">Actualizar Empleado</button>
+  </form>
+
+  <!-- Formulario para eliminar un empleado -->
+  <br><br>
+  <form method="post" action="empleados.php">
+    <h1>Eliminar empleado</h1>
+    <br><br>
+    <label for="identificacion_del">Identificación del empleado a eliminar:</label>
+    <input type="text" id="identificacion_del" name="identificacion_del" required>
+    <br><br>
+
+    <button type="submit" name="delete_employee">Eliminar Empleado</button>
+  </form>
 
 </body>
+
 </html>

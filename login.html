@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Restaurante Coroso</title>
 </head>
 <body>
     <!--Login para entrar a la Administracion del restaurante-->
-    <h2>Administracion</h2>
+    <h2 class="titulo_login">Administracion</h2>
     <div class="login">
-        <img src="img/cocinera_logo.png" alt="logo">
+
+        <img class="logo" src="img/cocinera_logo.png" >
         <form action="login.php" method="post">
 
-            <div class="form">
+            <div class="form4">
                 <label for="username"> Usuario: </label>
                 <input type="text" id="username" name="username">
             </div>
 
-            <div class="form">
+            <div class="form5">
                 <label for="password"> Contraseña: </label>
                 <input type="password" id="password" name="password">
             </div>
 
             <br><br>
-            <button type="submit"> Entrar </button>
+            <button class="boton" type="submit"> Entrar </button>
 
         </form>
     </div>
