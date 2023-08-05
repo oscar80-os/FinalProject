@@ -41,8 +41,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["create_menu"])) {
 
 // Actualizar Plato
 
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_menu"])) {
+    $nombre_plato = $_POST["nombre_plato_mod"];
+    $ingredientes = $_POST["ingredientes_mod"];
+    $receta = $_POST["receta_mod"];
+    $personalizado = $_POST["personalizado_mod"];
+    $chef_encargado = $_POST["chef_encargado_mod"];
+    $observaciones = $_POST["observaciones_mod"];
 
+    $sql = "UPDATE menu SET ingredientes='$ingredientes', receta='$receta', personalizado='$personalizado', chef_encargado='$chef_encargado', observaciones='$observaciones' WHERE nombre_plato='$nombre_plato'";
 
+    if ($conn->query($sql) === TRUE) {
+        echo "Plato actualizado con exito.";
+    } else{
+        echo "Error al actualizar el plato." . $conn->error;
+    }
+}
+
+// eliminar plato
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_menu"])) {
+    $nombre_plato = $_POST["nombre_plato_del"];
+
+    $sql = "DELETE FROM menu WHERE nombre_plato='$nombre_plato'";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Plato eliminado con exito.";
+    } else {
+        echo "Error al eliminar el plato: " . $conn->error;
+    }
+}
 
 $conn->close();
 ?>
